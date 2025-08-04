@@ -1,36 +1,54 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: 欢迎来到 Typst
+description: Typst 中文文档站（非官方）
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Typst 中文文档站（非官方）
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/Typst.svg
+    alt: Typst Logo
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: 快速开始
+      link: /quickstart/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: 官方文档站（英文）
+      link: https://typst.app/docs/
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+---
+
+# 概述
+欢迎来到 Typst 的文档！Typst 是一个基于标记语言的全新排版系统，
+专为科学领域设计。它旨在成为高级工具（如 LaTeX）和简单工具（如 Word 和 Google Docs）的替代选择。我们构建 Typst 的目标是
+打造一个功能强大且使用愉快的排版工具。
+
+本文档分为两个部分：一个是对初学者友好的教程，
+通过实际用例介绍 Typst；另一个是全面的参考手册，
+解释 Typst 的所有概念和功能。
+
+我们还邀请您加入我们围绕 Typst 构建的社区。Typst 仍然是一个非常年轻的项目，
+因此您的反馈意见非常宝贵。
+
+---
+
+## 下一步
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="快速开始" icon="pencil">
+		在您的电脑上安装 Typst。
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="参考手册" icon="add-document">
+		解释 Typst 的所有概念和功能。
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="迁移指南" icon="open-book">
+		如果您来自 LaTeX 或其他排版系统，本指南将帮助您快速上手。
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="常见问题" icon="setting">
+		也许能回答您的疑问。
 	</Card>
+	
 </CardGrid>
