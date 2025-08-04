@@ -8,11 +8,19 @@ export default defineConfig({
 		starlight({
 			title: 'Typst 中文文档站',
 			logo: {
-				light: '/src/assets/Typst.svg',
-				dark: '/src/assets/Typst.svg',
+				src: '/src/assets/Typst.svg',
 				replacesTitle: true,
 			},
+			favicon: '/src/assets/typst-favicon-32x32.png',
 			sidebar: [
+				{
+					label: '快速开始',
+					link: '/quickstart',
+				},
+				{
+					label: '中文支持快速指北',
+					link: '/chinese-suppot',
+				},
 				{
 					label: '教程',
 					autogenerate: {
