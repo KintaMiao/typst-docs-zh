@@ -14,7 +14,7 @@ next:
 ## 设置规则
 正如我们在上一章中看到的那样，Typst 有两类函数：一类是 _插入_ 内容的函数（例如 [`image`] 函数），另一类是 _处理_ 作为参数传入的内容的函数（例如 [`align`] 函数）。当你想更改字体时，你可能首先想到的是寻找一个能实现该功能的函数，并将整个文档包裹在其中。
 
-```typst
+```typ
 #text(font: "New Computer Modern")[
   = Background
   In the case of glaciers, fluid
@@ -35,7 +35,7 @@ next:
 
 幸运的是，Typst 提供了更优雅的解决方案。通过 **设置规则**，你可以为某种类型的所有内容实例统一应用样式属性。设置规则的写法是输入 `{set}` 关键字，后跟你想设置其属性的函数名称，再跟上括号中的参数列表。
 
-```typst
+```typ
 #set text(
   font: "New Computer Modern"
 )
@@ -76,7 +76,7 @@ water).
 
 让我们为文档添加更多样式。我们希望有更大的边距和衬线字体。为了示例需要，我们还将设置另一个页面尺寸。
 
-```typst
+```typ
 #set page(
   paper: "a6",
   margin: (x: 1.8cm, y: 1.5cm),
@@ -132,7 +132,7 @@ behaviour of these natural structures.
 ## 一点精致感
 为了更清晰地组织文档结构，我们现在希望为标题添加编号。这可以通过设置 [`heading`] 函数的 `numbering` 参数实现。
 
-```typst
+```typ
 >>> #set text(font: "New Computer Modern")
 #set heading(numbering: "1.")
 
@@ -148,7 +148,7 @@ behaviour of these natural structures.
 
 我们将字符串 `{"1."}` 作为编号参数。这告诉 Typst 使用阿拉伯数字为标题编号，并在每一级编号后加一个点。我们还可以使用[字母、罗马数字和符号]($numbering) 来编号标题：
 
-```typst
+```typ
 >>> #set text(font: "New Computer Modern")
 #set heading(numbering: "1.a")
 
@@ -178,7 +178,7 @@ behaviour of these natural structures.
 
 通过 **显示规则**，你可以重新定义 Typst 显示某些元素的方式。你可以指定哪些元素应以不同方式显示，以及它们应该如何呈现。显示规则可用于文本实例、多种函数，甚至整个文档。
 
-```typst
+```typ
 #show "ArtosFlow": name => box[
   #box(image(
     "logo.svg",

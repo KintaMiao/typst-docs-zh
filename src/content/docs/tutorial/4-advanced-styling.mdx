@@ -38,7 +38,7 @@ next:
 
 让我们先为文档编写一些设置规则。
 
-```typst
+```typ
 #set page (
   paper: "us-letter",
   header: align (right)[
@@ -66,7 +66,7 @@ next:
 
 现在，我们来添加标题和摘要。先从标题开始。我们将其居中对齐，并通过 `[* 加粗星号 *]` 语法使其加粗。
 
-```typst
+```typ
 #align (center, text (17pt)[
   *A fluid dynamic model
   for glacier flow*
@@ -75,7 +75,7 @@ next:
 
 效果正确。我们使用 `text` 函数局部覆盖之前的文本设置，将标题字体大小临时设为 17pt。接下来添加作者列表：由于我们与导师共同撰写，因此要添加两人的姓名。
 
-```typst
+```typ
 #grid (
   columns: (1fr, 1fr),
   align (center)[
@@ -95,7 +95,7 @@ next:
 
 现在添加摘要。记住会议要求摘要为居中且非两端对齐。
 
-```typst
+```typ
 ...
 
 #align (center)[
@@ -109,7 +109,7 @@ next:
 
 另一个优化是将论文标题保存为变量，避免在页眉和标题中重复输入。我们可以使用 `{let}` 关键字实现：
 
-```typst
+```typ
 #let title = [
   A fluid dynamic model
   for glacier flow
@@ -141,7 +141,7 @@ next:
 
 通过添加 `{columns: 2}`，我们将整个文档包裹在双栏中。但这也会使标题和作者信息跨栏显示。为保持它们横跨整页，我们可以将它们包裹在 [`{place}`]($place) 函数调用中。`place` 函数接受对齐方式和内容作为位置参数。通过命名参数 `{scope}`，我们可以决定内容是相对于当前栏还是其父级（页面）定位。还有一个配置项：如果没有其他参数，`{place}` 会将内容从文档流中移出，使其覆盖其他内容而不影响容器内其他内容的布局：
 
-```typst
+```typ
 #place (
   top + center,
   rect (fill: black),
@@ -151,7 +151,7 @@ next:
 
 如果这里没有使用 `{place}`，正方形会独占一行，但在此它与后面的几行文字重叠。同时，这些文字表现得好像没有正方形存在。要改变这种行为，可以传入参数 `{float: true}`，确保放置项在页面顶部或底部占用的空间不会被其他内容占据。
 
-```typst
+```typ
 #set page (
   paper: "us-letter",
   header: align (
@@ -187,7 +187,7 @@ next:
 
 现在只剩最后一件事：样式化我们的标题。我们需要让它们居中并使用小型大写字母。由于 `heading` 函数本身不支持这些设置，我们必须编写自己的标题显示规则。
 
-```typst
+```typ
 #show heading: it => [
   #set align (center)
   #set text (13pt, weight: "regular")
@@ -200,7 +200,7 @@ next:
 
 唯一剩下的问题是所有标题现在看起来都一样。“Motivation” 和 “Problem Statement” 等子节标题应为斜体段内标题，但目前它们与节标题无法区分。我们可以通过在设置规则上使用 `where` 选择器来解决这个问题：这是我们可以调用的一种 [方法]($scripting/#methods)，用于根据标题级别过滤它们。我们可以用它来区分节标题和子节标题：
 
-```typst
+```typ
 #show heading.where (
   level: 1
 ): it => block (width: 100%)[

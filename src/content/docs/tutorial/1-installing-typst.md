@@ -1,6 +1,9 @@
 ---
 title: 安装 Typst
 description: 学习如何在你的电脑上安装 Typst
+prev:
+    label: 快速开始
+    link: /quickstart
 ---
 
 ## 在线使用

@@ -2,7 +2,7 @@
 title: 快速开始
 description: 快速开始使用 Typst
 next:
-    link: /tutorial/installing-typst/
+    link: /tutorial/1-installing-typst/
     label: 安装 Typst
 ---
 

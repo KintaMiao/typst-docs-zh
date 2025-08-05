@@ -2,10 +2,10 @@
 title: 在 Typst 中写作
 description: 学习如何编写文本、插入图片、公式及其他元素
 prev:
-    link: /tutorial/installing-typst/
+    link: /tutorial/1-installing-typst/
     label: 安装 Typst
 next:
-    link: /tutorial/formatting/
+    link: /tutorial/3-formatting/
     label: 格式设置
 ---
 
@@ -15,7 +15,7 @@ next:
 
 你已经对报告的写作角度有了清晰的想法。现在先从撰写引言部分开始。在编辑器中输入一些文本，你会立即在预览页面上看到对应的内容显示出来。
 
-```typst
+```typ
 In this report, we will explore the
 various factors that influence fluid
 dynamics in glaciers and how they
@@ -27,7 +27,7 @@ _在整个教程中，我们会像这样展示代码示例。就像在应用程�
 
 接下来，添加一个标题并强调某些文字。Typst 对最常见的格式化任务使用简单的标记语法。要添加标题，请输入 `=` 字符；若要将文本设为斜体以强调，用 `[_下划线_]` 将其包围。
 
-```typst
+```typ
 = Introduction
 In this report, we will explore the
 various factors that influence _fluid
@@ -40,7 +40,7 @@ behaviour of these natural structures.
 
 现在我们希望列出一些影响冰川动力学的因素。为此，使用编号列表。每个列表项前加一个 `+` 字符，Typst 会自动为项目编号。
 
-```typst
+```typ
 + The climate
 + The topography
 + The geology
@@ -48,7 +48,7 @@ behaviour of these natural structures.
 
 如果你想添加项目符号列表 (即无序列表)，可以使用 `-` 字符代替 `+`。还可以嵌套列表：例如，通过缩进方式为上面列表的第一个项目添加子列表。
 
-```typst
+```typ
 + The climate
   - Temperature
   - Precipitation
@@ -66,7 +66,7 @@ behaviour of these natural structures.
 
 为了让图像出现在页面上，我们将使用 Typst 的 \[`image`] 函数。
 
-```typst
+```typ
 #image("glacier.jpg")
 ```
 
@@ -74,7 +74,7 @@ behaviour of these natural structures.
 
 插入的图像默认占据整个页面宽度。要更改这一点，可以向 `image` 函数传递 `width` 参数。这是一个 _命名参数_，需以 `name: value` 的形式指定。如果有多个参数，需要用逗号分隔，所以我们先在路径后加一个逗号。
 
-```typst
+```typ
 #image("glacier.jpg", width: 70%)
 ```
 
@@ -86,7 +86,7 @@ behaviour of these natural structures.
 
 标题可以包含任意标记内容。要向函数传递标记内容，需将其用方括号 `[...]` 包裹起来。这种结构称为 _内容块_ (content block)。
 
-```typst
+```typ
 #figure(
   image("glacier.jpg", width: 70%),
   caption: [
@@ -98,7 +98,7 @@ behaviour of these natural structures.
 
 你继续撰写报告，并希望引用刚才的图表。为此，首先为图表附加一个标签。标签用于唯一标识文档中的某个元素。在图表后使用尖括号 `<...>` 添加一个标签名称。之后就可以在正文中通过 `[@]` 加上标签名来引用它。标题和公式也可以被打上标签以便引用。
 
-```typst
+```typ
 Glaciers as the one shown in
 @glaciers will cease to exist if
 we don't take action soon!
@@ -130,7 +130,7 @@ Typst 原生支持的参考文献格式是 [Hayagriva](https://github.com/typst/
 
 一旦文档中包含了参考文献，你就可以开始从中引用条目。引用语法与标签引用相同。当你首次引用某个文献来源时，它将自动出现在文档末尾的参考文献部分。Typst 支持多种引用和参考文献样式。详情请参阅[参考文档]($bibliography.style)。
 
-```typst
+```typ
 = Methods
 We follow the glacier melting models
 established in @glacier-melt.
@@ -142,14 +142,14 @@ established in @glacier-melt.
 
 完成方法部分后，你进入文档的核心部分：数学公式。Typst 内置了强大的数学排版功能，并采用自己独特的数学表达语法。先从一个简单公式开始。使用 `[$]` 符号将其包围，告诉 Typst 这是一个数学表达式：
 
-```typst
+```typ
 The equation $Q = rho A v + C$
 defines the glacial flow rate.
 ```
 
 该公式以行内形式排版，与周围文本在同一行。如果你想让它单独成行显示，只需在公式前后各加一个空格：
 
-```typst
+```typ
 The flow rate of a glacier is
 defined by the following equation:
 
@@ -160,7 +160,7 @@ $ Q = rho A v + C $
 
 如果你想创建一个多字母组成的变量名，可以将其用引号括起来：
 
-```typst
+```typ
 The flow rate of a glacier is given
 by the following equation:
 
@@ -169,7 +169,7 @@ $ Q = rho A v + "time offset" $
 
 你的论文还需要一个求和公式。可以使用 `sum` 符号，并通过上下标指定求和范围：
 
-```typst
+```typ
 Total displaced soil by glacial flow:
 
 $ 7.32 beta +
@@ -180,7 +180,7 @@ $ 7.32 beta +
 
 上述例子还展示了如何插入分数：只需在分子和分母之间使用 `/` 字符，Typst 会自动将其转换为分数形式。括号会被智能解析，你可以像在计算器中那样输入表达式，Typst 会自动将括号内的子表达式转换为适当的数学符号。
 
-```typst
+```typ
 Total displaced soil by glacial flow:
 
 $ 7.32 beta +
@@ -190,7 +190,7 @@ $ 7.32 beta +
 
 并非所有数学结构都有特殊语法。此时我们仍使用函数，就像之前使用的 `image` 函数一样。例如，插入列向量可以使用 [`vec`]($math.vec) 函数。在数学模式中，函数调用不需要以 `#` 开头。
 
-```typst
+```typ
 $ v := vec(x_1, x_2, x_3) $
 ```
 
@@ -198,7 +198,7 @@ $ v := vec(x_1, x_2, x_3) $
 
 还有一点：许多符号 (如箭头) 有多种变体。你可以通过在符号名后加上点和修饰符名称来选择不同样式：
 
-```typst
+```typ
 $ a arrow.squiggly b $
 ```
 
