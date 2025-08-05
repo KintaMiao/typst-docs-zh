@@ -4,6 +4,7 @@ description: 快速开始使用 Typst
 next:
     link: /tutorial/1-installing-typst/
     label: 安装 Typst
+prev: false
 ---
 
 <h1 align="center">
@@ -31,7 +32,7 @@ Typst 适用于撰写任何长篇文本，包括论文、文章、学术报告�
 
 我们希望你能享受 Typst 的使用体验！
 
-:::tip[INFO]
+:::tip
 
 本教程基于 Typst 网页端撰写，但由于目前网页端对中文支持不佳，因此教程部分仅对正文汉化，所创建的文档内容仍保持英文，我们将在基础教程之后讨论在 Typst 使用中文撰写文档的方法，你可以可以跳过本章直接进入[中文支持快速指北](/chinese-support/)章节。
 

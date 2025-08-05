@@ -14,8 +14,8 @@ export default defineConfig({
 			favicon: '/src/assets/typst-favicon-32x32.png',
 			sidebar: [
 				{
-					label: '快速开始',
-					link: '/quickstart',
+					label: '欢迎来到 Typst',
+					link: '/welcome',
 				},
 				{
 					label: '中文支持快速指北',
@@ -25,6 +25,12 @@ export default defineConfig({
 					label: '教程',
 					autogenerate: {
 						directory: 'tutorial',
+					},
+				},
+				{
+					label: '迁移指南',
+					autogenerate: {
+						directory: 'migration',
 					},
 				},
 				{
